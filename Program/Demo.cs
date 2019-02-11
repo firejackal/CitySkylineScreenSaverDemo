@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Drawing;
-using StrikeSoft.Libraries;
 
 namespace CitySkylineDemo.CS
 {
@@ -10,7 +9,7 @@ namespace CitySkylineDemo.CS
     {
         public static Form1[] MainWindow;
         public static ObjectDataCollection ObjectDatas = new ObjectDataCollection();
-        public static FrameTools FrameTools = new FrameTools();
+        public static HelperLib.FrameTools FrameTools = new HelperLib.FrameTools();
         public static bool IsPreview;
         public static bool mEnd;
         private static Random mRand = new Random();
@@ -35,23 +34,23 @@ namespace CitySkylineDemo.CS
         private static void CheckArgs(string[] args)
         {
             int previewWindowHandle;
-            ScreenSaverHelper.StartupModes startType = ScreenSaverHelper.ParseStartupMode(args, out previewWindowHandle);
+            WindowsLib.ScreenSaverHelper.StartupModes startType = WindowsLib.ScreenSaverHelper.ParseStartupMode(args, out previewWindowHandle);
 
             // Determine whether the screen saver should show user definable options.
-            if(startType == ScreenSaverHelper.StartupModes.Configure) {
+            if(startType == WindowsLib.ScreenSaverHelper.StartupModes.Configure) {
                 frmConfig usercnfg = new frmConfig();
                 usercnfg.ShowDialog();
                 // Determine whether the screen saver should just execute.
-            } else if(startType == ScreenSaverHelper.StartupModes.Start) {
+            } else if(startType == WindowsLib.ScreenSaverHelper.StartupModes.Start) {
                 //Check for previous instance.
-                if(!ScreenSaverHelper.HasPreviousInstance()) {
+                if(!WindowsLib.ScreenSaverHelper.HasPreviousInstance()) {
                     // Create a Screen Saver form, and then display the form.
                     IsPreview = false;
                     StartScreenSaver();
                 }
-            } else if(startType == ScreenSaverHelper.StartupModes.Preview) {
+            } else if(startType == WindowsLib.ScreenSaverHelper.StartupModes.Preview) {
                 //Check for previous instance.
-                if(!ScreenSaverHelper.HasPreviousInstance()) {
+                if(!WindowsLib.ScreenSaverHelper.HasPreviousInstance()) {
                     // Create a Screen Saver form, and then display the form.
                     if(args.Length > 1) {
                         IsPreview = true;
@@ -66,7 +65,7 @@ namespace CitySkylineDemo.CS
             if (targetWindow != 0) {
                 MainWindow = new Form1[1];
                 MainWindow[0].Show();
-                ScreenSaverHelper.SetPreviewWindow(MainWindow[0], (IntPtr)targetWindow);
+                WindowsLib.ScreenSaverHelper.SetPreviewWindow(MainWindow[0], (IntPtr)targetWindow);
             } else {
                 MainWindow = new Form1[Screen.AllScreens.Length];
                 for(int i = 0; i < Screen.AllScreens.Length; i++)

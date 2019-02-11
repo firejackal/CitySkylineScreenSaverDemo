@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CitySkylineDemo.CS</RootNamespace>
     <AssemblyName>CitySkylineDemo.CS</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,30 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\Shared\C#\Frame Tools.cs">
-      <Link>Libraries\Frame Tools.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Shared\C#\Google Geocode API.cs">
-      <Link>Libraries\Google Geocode API.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Shared\C#\Google Weather API.cs">
-      <Link>Libraries\Google Weather API.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Shared\C#\Graphics\GDI+ Helper.cs">
-      <Link>Libraries\GDI+ Helper.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Shared\C#\Sun Rise Times.cs">
-      <Link>Libraries\Sun Rise Times.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Shared\C#\Windows\Registry Helper.cs">
-      <Link>Libraries\Registry Helper.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Shared\C#\Windows\Screen Saver Helper.cs">
-      <Link>Libraries\Screen Saver Helper.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Shared\C#\Windows\User32.cs">
-      <Link>Libraries\User32.cs</Link>
-    </Compile>
+    <Compile Include="Libraries\Sun Rise Times.cs" />
     <Compile Include="Program\Config Dialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +73,7 @@
       <DependentUpon>Config Dialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Program\Demo.cs" />
+    <Compile Include="Program\Dummy Weather Data.cs" />
     <Compile Include="Program\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +82,7 @@
     </Compile>
     <Compile Include="Program\Options.cs" />
     <Compile Include="Program\Scene.cs" />
+    <Compile Include="Program\Weather API.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Program\Config Dialog.resx">
       <DependentUpon>Config Dialog.cs</DependentUpon>
@@ -118,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -143,6 +124,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Shared\C#\Helper\HelperLib.csproj">
+      <Project>{93ffb320-ccb7-42f9-97f6-2e3d6b4400fa}</Project>
+      <Name>HelperLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Shared\C#\Windows\WindowsLib.csproj">
+      <Project>{b0ab036f-2146-4d51-a052-117e7df1f754}</Project>
+      <Name>WindowsLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

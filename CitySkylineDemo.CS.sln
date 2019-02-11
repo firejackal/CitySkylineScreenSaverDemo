@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySkylineDemo.CS", "CitySkylineDemo.CS.csproj", "{B06C34A4-7E91-4525-90D6-D29D2D4C74CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsLib", "..\..\..\..\..\Shared\C#\Windows\WindowsLib.csproj", "{B0AB036F-2146-4D51-A052-117E7DF1F754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperLib", "..\..\..\..\..\Shared\C#\Helper\HelperLib.csproj", "{93FFB320-CCB7-42F9-97F6-2E3D6B4400FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{B06C34A4-7E91-4525-90D6-D29D2D4C74CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B06C34A4-7E91-4525-90D6-D29D2D4C74CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B06C34A4-7E91-4525-90D6-D29D2D4C74CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AB036F-2146-4D51-A052-117E7DF1F754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AB036F-2146-4D51-A052-117E7DF1F754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0AB036F-2146-4D51-A052-117E7DF1F754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0AB036F-2146-4D51-A052-117E7DF1F754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93FFB320-CCB7-42F9-97F6-2E3D6B4400FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93FFB320-CCB7-42F9-97F6-2E3D6B4400FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93FFB320-CCB7-42F9-97F6-2E3D6B4400FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93FFB320-CCB7-42F9-97F6-2E3D6B4400FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90182F7C-03C5-4ABA-83BD-FB082F254108}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using StrikeSoft.Libraries.Graphics;
 
 namespace CitySkylineDemo.CS
 {
@@ -9,7 +8,7 @@ namespace CitySkylineDemo.CS
     {
         private const int MouseMovementDelta = 5;
         private int mOldMouseX, mOldMouseY;
-        private GDIPlusHelper Graphics;
+        private WindowsLib.GDIPlusHelper Graphics;
 
         //private float mDelta;
 
@@ -21,7 +20,7 @@ namespace CitySkylineDemo.CS
         {
             this.Text = "Screen Saver"; //My.Application.Info.Title;
             this.SetStyle(ControlStyles.Opaque | ControlStyles.UserPaint, true);
-            this.Graphics = new GDIPlusHelper(this, 0, 0);
+            this.Graphics = new WindowsLib.GDIPlusHelper(this, 0, 0);
             this.Graphics.Display.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             if (!Demo.IsPreview) {

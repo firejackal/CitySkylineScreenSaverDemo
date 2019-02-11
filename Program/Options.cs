@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿// Using my WindowsLib for the RegistryHelper class.
+using System.Drawing;
 
 public class OptionsManager
 {
@@ -32,14 +33,14 @@ public class OptionsManager
 
     public void ReadSettings()
     {
-        RegistryHelper reg = new RegistryHelper();
+        WindowsLib.RegistryHelper reg = new WindowsLib.RegistryHelper();
         this.DefaultLocation = (string)reg.GetValue(reg.HKeyLocalMachine, this.RegistryPath, "ZIP Code", "10001");
         this.OverrideWeatherCondition = (string)reg.GetValue(reg.HKeyLocalMachine, this.RegistryPath, "Override Weather Condition", "");
     } //ReadSettings
 
     public void SaveSettings()
     {
-        RegistryHelper reg = new RegistryHelper();
+        WindowsLib.RegistryHelper reg = new WindowsLib.RegistryHelper();
         reg.SetValue(reg.HKeyLocalMachine, this.RegistryPath, "ZIP Code", this.DefaultLocation);
         reg.SetValue(reg.HKeyLocalMachine, this.RegistryPath, "Override Weather Condition", this.OverrideWeatherCondition);
     } //SaveSettings
