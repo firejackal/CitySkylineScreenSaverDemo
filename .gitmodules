@@ -1,0 +1,6 @@
+[submodule "HelperLib"]
+	path = HelperLib
+	url = https://github.com/firejackal/HelperLib
+[submodule "WindowsLib"]
+	path = WindowsLib
+	url = https://github.com/firejackal/WindowsLib
